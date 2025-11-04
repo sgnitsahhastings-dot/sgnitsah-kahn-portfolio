@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Home, User, Code, Briefcase, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import profilePicture from "@/assets/profile-picture.jpg";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,13 +53,58 @@ const Navigation = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <button
-              onClick={() => scrollToSection("hero")}
-              className="text-2xl font-bold text-gradient hover:scale-105 transition-transform duration-300"
-            >
-              SK
-            </button>
+            {/* Logo - Profile Picture */}
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="relative group cursor-pointer focus:outline-none">
+                  <div className="relative w-12 h-12 md:w-14 md:h-14">
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-primary/60 to-accent-secondary blur-sm opacity-40 group-hover:opacity-70 transition-all duration-500" />
+                    
+                    {/* Profile image container */}
+                    <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/60 shadow-lg shadow-primary/10 transition-all duration-500 group-hover:scale-110">
+                      <img 
+                        src={profilePicture} 
+                        alt="Sgnitsah Kahn" 
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* SK badge overlay */}
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-primary to-primary/90 rounded-tl-2xl rounded-br-full flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-500">
+                        <span className="text-primary-foreground font-bold text-[8px] tracking-tight">SK</span>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-3xl p-0 overflow-hidden bg-background/98 backdrop-blur-2xl border-2 border-primary/30 shadow-2xl animate-scale-in">
+                <div className="relative group">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <img 
+                      src={profilePicture} 
+                      alt="Sgnitsah Kahn - Full Stack Developer" 
+                      className="w-full h-auto max-h-[80vh] object-contain animate-fade-in"
+                    />
+                    
+                    {/* Bottom gradient info panel */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent p-8 md:p-10">
+                      <div className="flex items-end justify-between">
+                        <div>
+                          <div className="flex items-center gap-3 mb-2">
+                            <h3 className="text-3xl md:text-4xl font-bold text-foreground">Sgnitsah Kahn</h3>
+                            <div className="bg-primary/20 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/40">
+                              <span className="text-primary font-bold text-sm tracking-wide">SK</span>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground text-lg">Full Stack Developer</p>
+                          <p className="text-muted-foreground/80 text-sm mt-1">Crafting beautiful digital experiences</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
