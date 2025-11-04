@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import profilePicture from "@/assets/profile-picture.jpg";
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -52,26 +54,33 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="slide-up">
+          <div className="slide-up mb-8 flex justify-center">
+            <Avatar className="w-32 h-32 md:w-40 md:h-40 ring-4 ring-primary/20 shadow-2xl shadow-primary/30 hover:scale-105 transition-transform duration-300">
+              <AvatarImage src={profilePicture} alt="Sgnitsah Kahn" />
+              <AvatarFallback className="bg-primary text-primary-foreground text-4xl">SK</AvatarFallback>
+            </Avatar>
+          </div>
+          
+          <div className="slide-up" style={{ animationDelay: "0.2s" }}>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Hi, I'm{" "}
               <span className="text-gradient glow-effect">Sgnitsah Kahn</span>
             </h1>
           </div>
 
-          <div className="slide-up h-20 md:h-24 mb-8" style={{ animationDelay: "0.2s" }}>
+          <div className="slide-up h-20 md:h-24 mb-8" style={{ animationDelay: "0.4s" }}>
             <h2 className="text-2xl md:text-4xl text-muted-foreground">
               <span className="text-primary font-semibold">{text}</span>
               <span className="animate-pulse">|</span>
             </h2>
           </div>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 slide-up max-w-2xl mx-auto" style={{ animationDelay: "0.4s" }}>
+          <p className="text-lg md:text-xl text-muted-foreground mb-12 slide-up max-w-2xl mx-auto" style={{ animationDelay: "0.6s" }}>
             Crafting beautiful, scalable web applications with modern technologies.
             Passionate about creating seamless user experiences and clean code.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center mb-12 slide-up" style={{ animationDelay: "0.6s" }}>
+          <div className="flex flex-wrap gap-4 justify-center mb-12 slide-up" style={{ animationDelay: "0.8s" }}>
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50"
@@ -89,7 +98,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex gap-6 justify-center slide-up" style={{ animationDelay: "0.8s" }}>
+          <div className="flex gap-6 justify-center slide-up" style={{ animationDelay: "1s" }}>
             <a
               href="https://github.com"
               target="_blank"
