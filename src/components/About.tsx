@@ -62,7 +62,7 @@ const About = () => {
             }`}
             style={{ animationDelay: "0.2s" }}
           >
-            I'm a passionate full-stack developer with expertise in building modern web applications.
+            I'm a passionate full-stack Web developer with expertise in building modern web applications.
             With a strong foundation in both frontend and backend technologies, I create seamless
             digital experiences that solve real-world problems.
           </p>
