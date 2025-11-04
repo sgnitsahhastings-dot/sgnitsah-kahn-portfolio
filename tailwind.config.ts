@@ -38,6 +38,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          secondary: "hsl(var(--accent-secondary))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -80,10 +81,40 @@ export default {
             height: "0",
           },
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        slideInRight: {
+          "0%": { opacity: "0", transform: "translateX(30px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        fadeIn: "fadeIn 0.8s ease-out forwards",
+        slideUp: "slideUp 0.8s ease-out forwards",
+        slideInLeft: "slideInLeft 0.8s ease-out forwards",
+        slideInRight: "slideInRight 0.8s ease-out forwards",
+        float: "float 6s ease-in-out infinite",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
