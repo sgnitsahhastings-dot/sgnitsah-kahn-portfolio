@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, X } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import profilePicture from "@/assets/profile-picture.jpg";
 
 const Hero = () => {
@@ -55,10 +56,32 @@ const Hero = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="slide-up mb-8 flex justify-center">
-            <Avatar className="w-32 h-32 md:w-40 md:h-40 ring-4 ring-primary/20 shadow-2xl shadow-primary/30 hover:scale-105 transition-transform duration-300">
-              <AvatarImage src={profilePicture} alt="Sgnitsah Kahn" />
-              <AvatarFallback className="bg-primary text-primary-foreground text-4xl">SK</AvatarFallback>
-            </Avatar>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="relative group cursor-pointer">
+                  <Avatar className="w-32 h-32 md:w-40 md:h-40 ring-4 ring-primary/20 shadow-2xl shadow-primary/30 hover:scale-105 transition-all duration-300 hover:ring-primary/40">
+                    <AvatarImage src={profilePicture} alt="Sgnitsah Kahn" />
+                    <AvatarFallback className="bg-primary text-primary-foreground text-4xl md:text-5xl font-bold">SK</AvatarFallback>
+                  </Avatar>
+                  <div className="absolute inset-0 bg-background/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-sm font-medium text-foreground">View</span>
+                  </div>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl p-0 overflow-hidden bg-background/95 backdrop-blur-xl border-primary/20">
+                <div className="relative">
+                  <img 
+                    src={profilePicture} 
+                    alt="Sgnitsah Kahn - Full Stack Developer" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
+                    <h3 className="text-2xl font-bold text-foreground">Sgnitsah Kahn</h3>
+                    <p className="text-muted-foreground">Full Stack Developer</p>
+                  </div>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
           
           <div className="slide-up" style={{ animationDelay: "0.2s" }}>
