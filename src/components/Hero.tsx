@@ -58,26 +58,62 @@ const Hero = () => {
           <div className="slide-up mb-8 flex justify-center">
             <Dialog>
               <DialogTrigger asChild>
-                <button className="relative group cursor-pointer">
-                  <Avatar className="w-32 h-32 md:w-40 md:h-40 ring-4 ring-primary/20 shadow-2xl shadow-primary/30 hover:scale-105 transition-all duration-300 hover:ring-primary/40">
-                    <AvatarImage src={profilePicture} alt="Sgnitsah Kahn" />
-                    <AvatarFallback className="bg-primary text-primary-foreground text-4xl md:text-5xl font-bold">SK</AvatarFallback>
-                  </Avatar>
-                  <div className="absolute inset-0 bg-background/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-sm font-medium text-foreground">View</span>
+                <button className="relative group cursor-pointer focus:outline-none">
+                  {/* Main logo container with image and SK overlay */}
+                  <div className="relative w-36 h-36 md:w-44 md:h-44">
+                    {/* Outer glow ring */}
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-primary/60 to-accent-secondary blur-md opacity-50 group-hover:opacity-80 transition-all duration-500 group-hover:blur-lg" />
+                    
+                    {/* Main avatar with image */}
+                    <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-primary/30 group-hover:ring-primary/50 shadow-2xl shadow-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:shadow-3xl group-hover:shadow-primary/40">
+                      <img 
+                        src={profilePicture} 
+                        alt="Sgnitsah Kahn" 
+                        className="w-full h-full object-cover"
+                      />
+                      
+                      {/* SK initials overlay - positioned at bottom right */}
+                      <div className="absolute bottom-0 right-0 w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary to-primary/90 rounded-tl-3xl rounded-br-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-500">
+                        <span className="text-primary-foreground font-bold text-lg md:text-xl tracking-tight">SK</span>
+                      </div>
+                      
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
+                        <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          <div className="bg-primary/90 backdrop-blur-sm px-4 py-2 rounded-full">
+                            <span className="text-primary-foreground text-sm font-semibold">Click to view</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </button>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl p-0 overflow-hidden bg-background/95 backdrop-blur-xl border-primary/20">
-                <div className="relative">
-                  <img 
-                    src={profilePicture} 
-                    alt="Sgnitsah Kahn - Full Stack Developer" 
-                    className="w-full h-auto rounded-lg"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
-                    <h3 className="text-2xl font-bold text-foreground">Sgnitsah Kahn</h3>
-                    <p className="text-muted-foreground">Full Stack Developer</p>
+              <DialogContent className="max-w-3xl p-0 overflow-hidden bg-background/98 backdrop-blur-2xl border-2 border-primary/30 shadow-2xl animate-scale-in">
+                <div className="relative group">
+                  {/* Full size image */}
+                  <div className="relative overflow-hidden rounded-lg">
+                    <img 
+                      src={profilePicture} 
+                      alt="Sgnitsah Kahn - Full Stack Developer" 
+                      className="w-full h-auto max-h-[80vh] object-contain animate-fade-in"
+                    />
+                    
+                    {/* Bottom gradient info panel */}
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/95 to-transparent p-8 md:p-10 transform translate-y-2 transition-transform duration-500">
+                      <div className="flex items-end justify-between">
+                        <div>
+                          <div className="flex items-center gap-3 mb-2">
+                            <h3 className="text-3xl md:text-4xl font-bold text-foreground">Sgnitsah Kahn</h3>
+                            <div className="bg-primary/20 backdrop-blur-sm px-3 py-1 rounded-full border border-primary/40">
+                              <span className="text-primary font-bold text-sm tracking-wide">SK</span>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground text-lg">Full Stack Developer</p>
+                          <p className="text-muted-foreground/80 text-sm mt-1">Crafting beautiful digital experiences</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </DialogContent>
