@@ -25,28 +25,28 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Next.js", level: 85 },
+        { name: "React", level: 80 },
+        { name: "TypeScript", level: 75 },
+        { name: "Tailwind CSS", level: 80 },
+        { name: "Next.js", level: 77 },
       ],
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Express", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 85 },
+        { name: "Node.js", level: 85 },
+        { name: "Express", level: 70 },
+        { name: "PostgreSQL", level: 70 },
+        { name: "MongoDB", level: 75 },
       ],
     },
     {
       title: "Tools & Others",
       skills: [
-        { name: "Git", level: 90 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "REST APIs", level: 95 },
+        { name: "Git", level: 77 },
+        { name: "Docker", level: 65 },
+        { name: "AWS", level: 60 },
+        { name: "REST APIs", level: 80 },
       ],
     },
   ];
