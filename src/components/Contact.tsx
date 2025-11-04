@@ -41,19 +41,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "sgnitsah@example.com",
+      value: "sgnitsahhasting@gmail.com.com",
       link: "mailto:sgnitsah@example.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+265 888 10 16 10",
       link: "tel:+15551234567",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Mzuzu, Malawi",
       link: "#",
     },
   ];
