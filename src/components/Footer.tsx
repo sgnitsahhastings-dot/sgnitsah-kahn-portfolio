@@ -12,7 +12,7 @@ const Footer = () => {
               <h3 className="text-2xl font-bold mb-2">
                 <span className="text-gradient">Sgnitsah Kahn</span>
               </h3>
-              <p className="text-muted-foreground">Full Stack Developer</p>
+              <p className="text-muted-foreground">Full Stack Web Developer</p>
             </div>
 
             <div className="flex gap-6">
